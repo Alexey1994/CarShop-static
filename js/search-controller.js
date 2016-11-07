@@ -1,10 +1,32 @@
-var search_parameter_model       = document.getElementById('search_parameter_model')
-var search_parameter_type        = document.getElementById('search_parameter_type')
-var search_parameter_price_begin = document.getElementById('search_parameter_price_begin')
-var search_parameter_price_end   = document.getElementById('search_parameter_price_end')
+var select_car_type = document.getElementById('select_car_type')
 
 
-search_parameter_model.onchange = function()
+function set_select_options(select, array_options)
 {
-	alert(this.value)
+	var options = ''
+
+	for(var i in array_options)
+		options += '<option>' + array_options[i] + '</option>'
+
+	select.innerHTML = options
 }
+
+
+function get_car_types()
+{
+	var car_parameters = get_input('car_parameters')
+
+	get('car_types/' + car_parameters.type_car, function(data)
+	{
+		set_select_options(select_car_type.querySelector('select'), JSON.parse(data))
+	})
+}
+
+
+function search()
+{
+	console.log(get_input('car_parameters'))
+}
+
+
+get_input('car_parameters')

@@ -17,48 +17,8 @@
 			<button class="login">
 				Войти							</button>
 		</div>
-		<div class="cart">
-			<div class="cart-wrapper" onclick="open_cart()">
-				<model name="cart">
-					<cart_count>
-					</cart_count>
-					товаров									</model>
-			</div>
-		</div>
 	</div>
 	<div class="content">
-		<div class="search-menu">
-			<div class="search-panel">
-				<user_input name="car_parameters">
-										Марка автомобиля:					<type_car class="type-car" onchange="get_car_types()" type="select">
-						<option>
-							Любая						</option>
-						<option>
-							Acura						</option>
-						<option>
-							Alfa Romeo						</option>
-						<option>
-							Audi						</option>
-						<option>
-							BMW						</option>
-						<option>
-							Chery						</option>
-						<option>
-							Chevrolet													</option>
-					</type_car>
-					Тип автомобиля:					<model_car class="type-car" id="select_car_type" type="select">
-						<option>
-							Любой													</option>
-					</model_car>
-					<price_begin class="price" oninput="validate_price_begin()" placeholder="цена от" type="text">
-					</price_begin>
-					<price_end class="price" placeholder="цена до" type="text">
-											</price_end>
-				</user_input>
-				<button class="search-button" onclick="search()">
-					Подобрать									</button>
-			</div>
-		</div>
 		<div class="cars">
 			<model name="cars">
 				<array>
