@@ -1,5 +1,3 @@
-var models=document.getElementsByTagName('model')
-
 var HTML_tags={'body':    true,
                'div':     true,
                'span':    true,
@@ -35,18 +33,7 @@ function crawl(array, func)
 
 function find_model(model_name)
 {
-	var current_model=undefined
-
-	crawl(models, function(model)
-	{
-		if(model.getAttribute('name')==model_name)
-		{
-			current_model=model
-			return true
-		}
-	})
-
-	return current_model
+	return document.querySelector('model[name="' + model_name + '"]')
 }
 
 
@@ -170,6 +157,5 @@ function get_model(model_name)
 
 	return model
 }
-
 
 update_arrays(document)

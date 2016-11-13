@@ -15,6 +15,7 @@
 			<button class="login">Войти
 
 	<div class="content">
+		<button class="order-button">Оформить заказ
 		<div class="cars">
 			<model name="cars">
 				<array>
@@ -27,6 +28,8 @@
 							Максимальная скорость:
 						<div class="price-desription">
 							Цена:
+					<span class="remove">x
+					<id_order>
 					<car_image>
 					<car_model>
 					<car_type>
@@ -39,6 +42,5 @@
 	<script src="js/libraries/API.js">
 	<script src="js/libraries/model.js">
 	<script src="js/libraries/user input.js">
-	<script src="js/search-controller.js">
-	<script src="js/cars-controller.js">
-	<script src="js/cart-controller.js">
+	<script src="js/Main/search-controller.js">
+	<script src="js/Cart/сart-controller.js">

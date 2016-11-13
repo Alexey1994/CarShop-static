@@ -1,0 +1,17 @@
+{
+	"title":         "Car shop",
+	"login":         "Login",
+	"password":      "Password",
+	"sign_out":      "Sign out",
+	"sign_in":       "Sign in",
+	"orders":        "orders",
+	"model_car":     "Model car",
+	"type_car":      "Type car",
+	"price_from":    "Price from",
+	"price_to":      "Price to",
+	"find":          "Find",
+	"model":         "Model",
+	"type":          "Type",
+	"maximum_speed": "Maximum speed",
+	"price":         "Speed"
+}

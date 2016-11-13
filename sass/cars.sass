@@ -1,13 +1,13 @@
 .cars
-	width:  80%
-	float:  right
+	width:      80%
+	float:      right
 
 	element
 		position:          relative
 		display:           block
 		margin:            1%
 		padding:           2%
-		height:            150px
+		height:            20%
 		box-shadow:        1px 0px 3px -1px #000
 		background-color:  #fff
 
@@ -16,7 +16,7 @@
 			left:     23%
 			display:  inline-block
 			width:    20%
-			height:   150px
+			height:   100%
 
 		.price-desription
 			margin-top:   10px
@@ -43,5 +43,41 @@
 
 		img
 			top:        0
-			height:     150px
+			height:     100%
 			max-width:  20%
+
+		.add
+			position: absolute
+			right:    1%
+			bottom:   5%
+
+		.del
+			position: absolute
+			right:    1%
+			top:      5%
+
+		.edit
+			position: absolute
+			right:    1%
+			bottom:   5%
+
+.pages
+	padding:          1%
+	margin:           1%
+	text-align:       center
+	background-color: #000
+	color:            #fff
+	box-shadow:       0 0 2px 0 #000
+
+	element
+		position:         relative
+		height:           auto
+		width:            auto
+		display:          inline-block
+		padding:          1%
+		margin:           0
+		background-color: #1D092C
+
+	element:hover
+		cursor:           pointer
+		background-color: #444

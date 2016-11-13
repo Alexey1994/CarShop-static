@@ -23,14 +23,6 @@
 			<button class="login">
 				#sign_in							</button>
 		</div>
-		<div class="cart">
-			<div class="cart-wrapper" onclick="open_cart()">
-				<model name="cart">
-					<cart_count>
-					</cart_count>
-					#orders									</model>
-			</div>
-		</div>
 	</div>
 	<div class="content">
 		<div class="search-menu">
@@ -74,7 +66,25 @@
 											</price_end>
 				</user_input>
 				<button class="search-button" onclick="search()">
-					#find									</button>
+					#find				</button>
+				<button class="search-button" onclick="set_new_car()">
+					Новый автомобиль									</button>
+			</div>
+		</div>
+		<div class="new-car-wrapper">
+			<div class="new-car">
+				<user_input name="new_car">
+					Модель:					<model_car placeholder="Модель" type="text">
+					</model_car>
+					Тип:					<type_car placeholder="Тип" type="text">
+					</type_car>
+					Цвет:					<type_car placeholder="Цвет" type="text">
+											</type_car>
+				</user_input>
+				<button class="add" onclick="save_new_car()">
+					Сохранить				</button>
+				<button class="cancel" onclick="cancel_save_new_car()">
+					Отмена									</button>
 			</div>
 		</div>
 		<div class="cars">
@@ -110,8 +120,10 @@
 					</speed>
 					<price>
 					</price>
-					<button class="add">
-						Добавить в корзину											</button>
+					<button class="del">
+						Удалить					</button>
+					<button class="edit">
+						Редактировать											</button>
 				</array>
 			</model>
 			<div class="pages">
@@ -134,12 +146,10 @@
 	</script>
 	<script src="js/libraries/state saver.js">
 			</script>
-	<script src="js/Main/search-controller.js">
+	<script src="js/Admin/cars-controller.js">
 	</script>
-	<script src="js/Main/cars-controller.js">
+	<script src="js/Admin/search-controller.js">
 	</script>
-	<script src="js/Main/cart-controller.js">
-	</script>
-	<script src="js/Main/main.js">
+	<script src="js/Admin/main.js">
 	</script>
 </html>

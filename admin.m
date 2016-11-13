@@ -18,12 +18,6 @@
 			<button class="login">#sign_out
 			<button class="login">#sign_in
 
-		<div class="cart">
-			<div class="cart-wrapper" onclick="open_cart()">
-				<model name="cart">
-					<cart_count>
-					#orders
-
 	<div class="content">
 		<div class="search-menu">
 			<div class="search-panel">
@@ -55,6 +49,20 @@
 					<price_end type="text" placeholder="#price_to" class="price">
 
 				<button class="search-button" onclick="search()">#find
+				<button class="search-button" onclick="set_new_car()">Новый автомобиль
+
+		<div class="new-car-wrapper">
+			<div class="new-car">
+				<user_input name="new_car">
+					Модель:
+					<model_car type="text" placeholder="Модель">
+					Тип:
+					<type_car type="text" placeholder="Тип">
+					Цвет:
+					<type_car type="text" placeholder="Цвет">
+
+				<button onclick="save_new_car()" class="add">Сохранить
+				<button onclick="cancel_save_new_car()" class="cancel">Отмена
 
 		<div class="cars">
 			<div class="search-order">
@@ -79,7 +87,8 @@
 					<car_type>
 					<speed>
 					<price>
-					<button class="add">Добавить в корзину
+					<button class="del">Удалить
+					<button class="edit">Редактировать
 
 			<div class="pages">
 				<model name="page_navigation">
@@ -94,7 +103,6 @@
 	<script src="js/libraries/localizator.js">
 	<script src="js/libraries/state saver.js">
 
-	<script src="js/Main/search-controller.js">
-	<script src="js/Main/cars-controller.js">
-	<script src="js/Main/cart-controller.js">
-	<script src="js/Main/main.js">
+	<script src="js/Admin/cars-controller.js">
+	<script src="js/Admin/search-controller.js">
+	<script src="js/Admin/main.js">

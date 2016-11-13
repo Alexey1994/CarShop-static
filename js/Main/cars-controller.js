@@ -1,22 +1,3 @@
-var cars=[
-	{
-		car_model: 'Audi',
-		car_type:  'RS',
-		speed:     320,
-		car_image: 'images/audi-rs.jpg',
-		price:     100000
-	},
-
-	{
-		car_model: 'Lamborghini',
-		car_type:  'Murcielago',
-		speed:     342,
-		car_image: 'images/lamboghini murcielago.jpg',
-		price:     300000
-	}
-]
-
-
 function set_images()
 {
 	var elements = document.querySelectorAll('model element')
@@ -36,6 +17,6 @@ function set_images()
 	}
 }
 
-
+/*
 set_model('cars', cars)
-set_images()
+set_images()*/

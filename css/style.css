@@ -4,7 +4,7 @@ html, body {
   font-family: Arial;
   font-size: 12pt;
   font-weight: normal;
-  background-color: #f3f3f3; }
+  background-color: #4e4e4e; }
 
 model {
   display: block; }
@@ -45,23 +45,30 @@ input:hover {
 .clearfix {
   *zoom: 1; }
 
+.language-buttons {
+  position: absolute;
+  float: left;
+  margin: 10px; }
+
 .header {
   height: 140px;
   background-color: #aaa; }
 
 .user {
+  position: absolute;
   padding: 10px;
-  width: 10%;
-  float: right; }
+  width: 150px;
+  right: 0; }
   .user .password {
     margin-bottom: 10px; }
   .user .login {
     width: 100%; }
 
 .cart {
-  float: right;
-  margin-top: 55px;
-  margin-right: 100px;
+  display: inline-block;
+  position: absolute;
+  right: 180px;
+  margin-top: 10px;
   padding: 10px 20px;
   background-color: #fff; }
 
@@ -69,18 +76,48 @@ input:hover {
   cursor: pointer;
   background-color: #eee; }
 
+.content {
+  margin-top: 1%; }
+
 .search-menu {
   width: 20%;
   float: left;
-  background-color: #bbb; }
+  background-color: #bbb;
+  box-shadow: 0 0 2px 0 #000; }
 
 .search-panel {
   padding: 20px; }
 
+.search-order {
+  margin: 0 1%;
+  padding: 10px;
+  background-color: #f4fff1;
+  box-shadow: 0px 0px 2px 0px #188003; }
+  .search-order button {
+    border: none;
+    padding: 0;
+    margin-right: 1%;
+    background-color: inherit; }
+
+.search-panel .add-car-criteria {
+  width: 100%; }
 .search-panel .price {
-  margin-top: 10px;
+  margin-top: 10%;
   width: 50%;
   float: left; }
+.search-panel .search-car-element element {
+  margin: 3px;
+  padding: 3px;
+  display: inline-block;
+  border-radius: 3px;
+  border: 1px solid #000;
+  background-color: #fff; }
+.search-panel .search-car-element del {
+  margin-left: 10px;
+  text-decoration: none; }
+.search-panel .search-car-element del:hover {
+  cursor: pointer;
+  color: red; }
 .search-panel .type-car {
   margin-top: 10px; }
   .search-panel .type-car select {
@@ -97,7 +134,7 @@ input:hover {
     display: block;
     margin: 1%;
     padding: 2%;
-    height: 150px;
+    height: 20%;
     box-shadow: 1px 0px 3px -1px #000;
     background-color: #fff; }
     .cars element .descriptions {
@@ -105,7 +142,7 @@ input:hover {
       left: 23%;
       display: inline-block;
       width: 20%;
-      height: 150px; }
+      height: 100%; }
     .cars element .price-desription {
       margin-top: 10px;
       font-weight: bolder;
@@ -126,7 +163,83 @@ input:hover {
       font-weight: bolder; }
     .cars element img {
       top: 0;
-      height: 150px;
+      height: 100%;
       max-width: 20%; }
+    .cars element .add {
+      position: absolute;
+      right: 1%;
+      bottom: 5%; }
+    .cars element .del {
+      position: absolute;
+      right: 1%;
+      top: 5%; }
+    .cars element .edit {
+      position: absolute;
+      right: 1%;
+      bottom: 5%; }
+
+.pages {
+  padding: 1%;
+  margin: 1%;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0 0 2px 0 #000; }
+  .pages element {
+    position: relative;
+    height: auto;
+    width: auto;
+    display: inline-block;
+    padding: 1%;
+    margin: 0;
+    background-color: #1D092C; }
+  .pages element:hover {
+    cursor: pointer;
+    background-color: #444; }
+
+.remove {
+  position: absolute;
+  display: inline-block;
+  float: right;
+  right: 15px; }
+
+.remove:hover {
+  cursor: pointer;
+  font-weight: bolder;
+  color: red; }
+
+id_order {
+  display: none; }
+
+.order-button {
+  position: absolute;
+  margin: 15px; }
+
+.no-anim {
+  animation: none; }
+
+.error {
+  animation: error_animation 0.2s; }
+
+@keyframes error_animation {
+  0% {
+    outline: 5px solid red;
+    background-color: red; }
+  100% {
+    outline: 1px solid red; } }
+.new-car-wrapper {
+  width: 80%;
+  float: right;
+  display: none; }
+
+.new-car {
+  margin: 0 1%;
+  padding: 2%;
+  box-shadow: 1px 0px 3px -1px #000;
+  background-color: #fff; }
+  .new-car .add {
+    margin-top: 1%; }
+  .new-car .cancel {
+    margin-top: 1%; }
 
 /*# sourceMappingURL=style.css.map */
