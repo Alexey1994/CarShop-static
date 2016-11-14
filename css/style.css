@@ -80,7 +80,8 @@ input:hover {
   margin-top: 1%; }
 
 .search-menu {
-  width: 20%;
+  margin-left: 1%;
+  width: 19%;
   float: left;
   background-color: #bbb;
   box-shadow: 0 0 2px 0 #000; }
