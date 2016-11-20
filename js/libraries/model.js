@@ -62,6 +62,15 @@ function set_model(model_name, model_data)
 	if(!current_model)
 		return
 
+	if(!current_model.is_initialized)
+		current_model.pattern = current_model.innerHTML
+
+	current_model.innerHTML = current_model.pattern
+	update_arrays(current_model)
+
+	current_model.is_initialized = true
+
+
 	function set_array(array, array_data)
 	{
 		if(!array)
@@ -99,12 +108,12 @@ function set_model(model_name, model_data)
 	{
 		for(var i in object_data)
 		{
-			if(typeof object_data[i]=='object')
+			if(object_data[i] && typeof object_data[i]=='object')
 			{
 				if(i==0)
 					set_array(find_object(undefined, object), object_data)
 
-				else if(object_data[i][0])
+				else if(object_data[i] && object_data[i][0])
 					set_array(find_object(i, object), object_data[i])
 				else
 					set_object(find_object(i, object), object_data[i])

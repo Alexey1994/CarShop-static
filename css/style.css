@@ -107,12 +107,12 @@ input:hover {
   width: 50%;
   float: left; }
 .search-panel .search-car-element element {
-  margin: 3px;
+  margin: 0 3px 3px 0;
   padding: 3px;
   display: inline-block;
-  border-radius: 3px;
-  border: 1px solid #000;
-  background-color: #fff; }
+  border: 1px solid #9F9F9F;
+  background-color: #fff;
+  box-shadow: 1px 0px 4px -1px #13628D; }
 .search-panel .search-car-element del {
   margin-left: 10px;
   text-decoration: none; }
@@ -148,13 +148,24 @@ input:hover {
       margin-top: 10px;
       font-weight: bolder;
       color: #12563A; }
-    .cars element car_model {
+    .cars element id {
+      display: none; }
+    .cars element brand {
       float: right;
       width: 56%; }
-    .cars element car_type {
+    .cars element model {
+      float: right;
+      width: 56%; }
+    .cars element color {
+      float: right;
+      width: 56%; }
+    .cars element power {
       float: right;
       width: 56%; }
     .cars element speed {
+      float: right;
+      width: 56%; }
+    .cars element year_of_manufacture {
       float: right;
       width: 56%; }
     .cars element price {
@@ -162,6 +173,10 @@ input:hover {
       float: right;
       width: 56%;
       font-weight: bolder; }
+    .cars element images {
+      top: 0;
+      height: 100%;
+      max-width: 20%; }
     .cars element img {
       top: 0;
       height: 100%;

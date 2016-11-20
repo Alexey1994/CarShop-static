@@ -36,14 +36,8 @@
 				<user_input name="car_parameters">
 
 					#model_car:
-					<type_car type="select" class="type-car" onchange="get_car_types()">
-						<option>Любая
-						<option>Acura
-						<option>Alfa Romeo
-						<option>Audi
-						<option>BMW
-						<option>Chery
-						<option>Chevrolet
+					<type_car type="select" class="type-car" onchange="get_car_types()" id="select_car_brand">
+						<option>Любой
 
 					#type_car:
 					<model_car type="select" class="type-car" id="select_car_type">
@@ -70,15 +64,25 @@
 							#model:
 						<div class="type-description">
 							#type:
+						<div class="type-description">
+							Цвет:
+						<div class="type-description">
+							Мощность:
 						<div class="speed-desription">
 							#maximum_speed:
+						<div class="type-description">
+							Год выпуска:
 						<div class="price-desription">
 							#price:
-					<car_image>
-					<car_model>
-					<car_type>
+					<id>
+					<brand>
+					<model>
+					<color>
+					<power>
 					<speed>
+					<year_of_manufacture>
 					<price>
+					<images>
 					<button class="add">Добавить в корзину
 
 			<div class="pages">

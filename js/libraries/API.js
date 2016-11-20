@@ -77,7 +77,7 @@ function send(path, data, get_func)
 	var client_API = get_client_API()
 
 	client_API.open('POST', path, true)
-	client_API.setRequestHeader('Content-Type', 'text/plain')
+	//client_API.setRequestHeader('Content-Type', 'text/plain')
 
 	client_API.onreadystatechange = function()
 	{

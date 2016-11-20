@@ -54,12 +54,12 @@
 		<div class="new-car-wrapper">
 			<div class="new-car">
 				<user_input name="new_car">
+					Марка:
+					<brand type="text" placeholder="Марка">
 					Модель:
-					<model_car type="text" placeholder="Модель">
-					Тип:
-					<type_car type="text" placeholder="Тип">
+					<model type="text" placeholder="Модель">
 					Цвет:
-					<type_car type="text" placeholder="Цвет">
+					<color type="text" placeholder="Цвет">
 
 				<button onclick="save_new_car()" class="add">Сохранить
 				<button onclick="cancel_save_new_car()" class="cancel">Отмена
@@ -82,11 +82,15 @@
 							#maximum_speed:
 						<div class="price-desription">
 							#price:
-					<car_image>
-					<car_model>
-					<car_type>
+					<id>
+					<brand>
+					<model>
+					<color>
+					<power>
 					<speed>
+					<year_of_manufacture>
 					<price>
+					<images>
 					<button class="del">Удалить
 					<button class="edit">Редактировать
 

@@ -46,21 +46,9 @@
 					</array>
 				</model>
 				<user_input name="car_parameters">
-										#model_car:					<type_car class="type-car" onchange="get_car_types()" type="select">
+										#model_car:					<type_car class="type-car" id="select_car_brand" onchange="get_car_types()" type="select">
 						<option>
-							Любая						</option>
-						<option>
-							Acura						</option>
-						<option>
-							Alfa Romeo						</option>
-						<option>
-							Audi						</option>
-						<option>
-							BMW						</option>
-						<option>
-							Chery						</option>
-						<option>
-							Chevrolet													</option>
+							Любой													</option>
 					</type_car>
 					#type_car:					<model_car class="type-car" id="select_car_type" type="select">
 						<option>
@@ -95,21 +83,35 @@
 							#model:						</div>
 						<div class="type-description">
 							#type:						</div>
+						<div class="type-description">
+							Цвет:						</div>
+						<div class="type-description">
+							Мощность:						</div>
 						<div class="speed-desription">
 							#maximum_speed:						</div>
+						<div class="type-description">
+							Год выпуска:						</div>
 						<div class="price-desription">
 							#price:						</div>
 					</div>
-					<car_image>
-					</car_image>
-					<car_model>
-					</car_model>
-					<car_type>
-					</car_type>
+					<id>
+					</id>
+					<brand>
+					</brand>
+					<model>
+					</model>
+					<color>
+					</color>
+					<power>
+					</power>
 					<speed>
 					</speed>
+					<year_of_manufacture>
+					</year_of_manufacture>
 					<price>
 					</price>
+					<images>
+					</images>
 					<button class="add">
 						Добавить в корзину											</button>
 				</array>

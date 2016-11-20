@@ -33,7 +33,11 @@ function update_car_criteria()
 function add_car_criteria()
 {
 	var criteria_model = document.querySelector('model[name="car_element"]')
-	var criteria = get_input('car_parameters')
+	var user_input     = get_input('car_parameters')
+	var criteria = {
+		type_car:  user_input.type_car,
+		model_car: user_input.model_car
+	}
 
 	for(var i in cars_criteria)
 	{
@@ -77,7 +81,7 @@ function delete_car_criteria(del)
 	var new_cars_criteria = []
 
 	for(var i in cars_criteria)
-		if(cars_criteria[i].type_car != type_car && cars_criteria[i].model_car != model_car)
+		if(cars_criteria[i].type_car != type_car || cars_criteria[i].model_car != model_car)
 			new_cars_criteria.push(cars_criteria[i])
 
 	model_array.removeChild(element)

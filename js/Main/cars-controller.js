@@ -17,6 +17,7 @@ function set_images()
 	}
 }
 
+
 /*
 set_model('cars', cars)
 set_images()*/
