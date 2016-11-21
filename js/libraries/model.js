@@ -136,6 +136,9 @@ function set_model(model_name, model_data)
 		}
 	}
 
+	if(!model_data)
+		return
+
 	if(model_data[0] && typeof model_data[0]!='object')
 	{
 		var arrays = current_model.getElementsByTagName('array')

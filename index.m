@@ -37,11 +37,11 @@
 
 					#model_car:
 					<type_car type="select" class="type-car" onchange="get_car_types()" id="select_car_brand">
-						<option>Любой
+						<option>
 
 					#type_car:
 					<model_car type="select" class="type-car" id="select_car_type">
-						<option>Любой
+						<option>
 
 					<button onclick="add_car_criteria()" class="add-car-criteria">Добавить автомобиль
 

@@ -14,10 +14,13 @@ function set_select_options(select, array_options)
 
 function get_car_brands()
 {
-	get('get_brands/', function(data)
-	{console.log(data)
+	var data = sync_get('get_brands/')
+
+	//get('get_brands/', function(data)
+	//{
 		set_select_options(document.querySelector('#select_car_brand select'), JSON.parse(data))
-	})
+		get_car_types()
+	//})
 }
 
 
@@ -25,16 +28,18 @@ function get_car_types()
 {
 	var select_car_type = document.getElementById('select_car_type')
 	var car_parameters  = get_input('car_parameters')
+	var data            = sync_get('get_models/' + car_parameters.type_car)
 
-	get('get_models/' + car_parameters.type_car, function(data)
-	{
+	//get('get_models/' + car_parameters.type_car, function(data)
+	//{console.log(car_parameters.type_car)
 		set_select_options(select_car_type.querySelector('select'), JSON.parse(data))
-	})
+	//})
 }
 
 
 function update_car_criteria()
 {
+	console.log(cars_criteria)
 	set_model('car_element', cars_criteria)
 }
 
@@ -131,7 +136,7 @@ function search()
 	var find_parameters = get_input('car_parameters')
 	var selected_cars   = state.selected_cars
 
-	if(find_parameters.type_car)
+	//if(find_parameters.type_car)
 	{
 		if(selected_cars)
 		{
@@ -149,11 +154,12 @@ function search()
 
 	if(state.current_page)
 		find_parameters.current_page = state.current_page
-
+console.log(find_parameters)
 	send('find_cars', JSON.stringify(find_parameters), function(data)
 	{
 		data = JSON.parse(data)
-
+console.log(data)
+console.log(data.pages)
 		set_pages_count(data.pages + 1)
 		set_search_types_events()
 
@@ -161,7 +167,7 @@ function search()
 
 		var car = document.querySelector('model[name="cars"]')
 
-		if(data.result.length)
+		if(data.result && data.result.length)
 			car.style.display = 'block'
 		else
 			car.style.display = 'none'

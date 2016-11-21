@@ -2,7 +2,7 @@ html, body {
   padding: 0;
   margin: 0;
   font-family: Arial;
-  font-size: 12pt;
+  font-size: 1em;
   font-weight: normal;
   background-color: #4e4e4e; }
 
@@ -135,7 +135,7 @@ input:hover {
     display: block;
     margin: 1%;
     padding: 2%;
-    height: 20%;
+    height: 150px;
     box-shadow: 1px 0px 3px -1px #000;
     background-color: #fff; }
     .cars element .descriptions {

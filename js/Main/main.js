@@ -11,19 +11,20 @@ function update_page(language)
 
 		//update_arrays(document)
 
-		search()
-		set_images()
-
 		set_model('cart', {cart_count: 0})
 		get_input('car_parameters')
 
 		if(state.selected_cars)
 		{
 			cars_criteria = JSON.parse(decodeURI(state.selected_cars))
+			console.log(cars_criteria)
 			update_car_criteria()
 		}
 
 		get_car_brands()
+
+		search()
+		set_images()
 	})
 }
 
