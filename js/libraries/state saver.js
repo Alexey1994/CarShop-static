@@ -8,7 +8,7 @@ function add_state(key, value)
 	state[key] = value
 
 	for(var i in state)
-		hash += i + ':' + state[i] + ';'
+		hash += i + ':' + encodeURI(state[i]) + ';'
 
 	window.location.hash = hash
 }
@@ -16,7 +16,7 @@ function add_state(key, value)
 
 function refresh_state()
 {
-	var text = window.location.hash
+	var text = decodeURI(window.location.hash)
 	var i    = 1
 	var key
 	var value

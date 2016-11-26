@@ -1,23 +1,21 @@
-function set_images()
+function render_cars(JSON_cars)
 {
-	var elements = document.querySelectorAll('model element')
+	var cars = []
 
-	for(var i in elements)
+	for(var i in JSON_cars)
 	{
-		if(typeof elements[i] != 'object')
-			continue
+		JSON_cars[i].button={
+			attributes:{
+				class: 'add',
+				onclick: "console.log(this)"
+			},
+			span: 'Добавить в корзину'
+		}
 
-		var image = document.createElement('img')
-		var car_image = elements[i].querySelector('car_image')
-
-		image.src = car_image.innerHTML
-		image.alt = car_image.innerHTML
-		elements[i].appendChild(image)
-		elements[i].removeChild(car_image)
+		cars.push({
+			car: JSON_cars[i]
+		})
 	}
+
+	add_JSON_to_HTML('cars', cars)
 }
-
-
-/*
-set_model('cars', cars)
-set_images()*/

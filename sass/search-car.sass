@@ -14,44 +14,87 @@
 	background-color: #f4fff1
 	box-shadow:       0px 0px 2px 0px #188003
 
+	span
+		margin-right: 1%
+		color:        #aaa
+
 	button
 		border:           none
 		padding:          0
 		margin-right:     1%
 		background-color: inherit
+		color:            #000
 
 .search-panel
+	.divider
+		margin-top: 20px
+
+	selected_cars
+		width:   100%
+		display: block
+
 	.add-car-criteria
 		width: 100%
 
+	select_brand select
+		width: 100%
+
+	select_model select
+		width: 100%
+
+	select_color select
+		width: 100%
+
+	selected_colors
+
+		color
+			display:          block
+			padding:          1%
+			margin-bottom:    5px
+			border:           1px solid #9F9F9F
+			background-color: #fff
+			box-shadow:       1px 0px 4px -1px #13628D
+
+		del
+			display:         inline-block
+			text-decoration: none
+			float:           right
+
+		del:hover
+			cursor: pointer
+			color:  red
+
 	.price
-		margin-top:  10%
 		width:       50%
 		float:       left
 
-	.search-car-element element
+	car
 		margin:           0 3px 3px 0
 		padding:          3px
-		display:          inline-block
+		display:          block
 		border:           1px solid #9F9F9F
 		background-color: #fff
 		box-shadow:       1px 0px 4px -1px #13628D
 
-	.search-car-element
+		brand
+			display: inline-block
+
+		model
+			margin-left: 3px
+			display:     inline-block
+
 		del
-			margin-left:     10px
+			float:           right
 			text-decoration: none
 
 		del:hover
 			cursor: pointer
-			color: red
+			color:  red
 
 	.type-car
-		margin-top:  10px
-
 		select
 			width:  100%
 
 	.search-button
 		width:       100%
-		margin-top:  10px
+		margin-top:  50px

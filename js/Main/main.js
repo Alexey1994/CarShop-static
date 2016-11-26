@@ -1,5 +1,7 @@
 function update_page(language)
 {
+	document.body.style = "display: none"
+	
 	refresh_state()
 	add_state('language', language)
 
@@ -9,22 +11,28 @@ function update_page(language)
 
 		localize(language)
 
-		//update_arrays(document)
+		update_search_orders()
+		get_car_brands()
+		get_colors()
 
-		set_model('cart', {cart_count: 0})
-		get_input('car_parameters')
+		//set_model('cart', {cart_count: 0})
 
 		if(state.selected_cars)
 		{
-			cars_criteria = JSON.parse(decodeURI(state.selected_cars))
-			console.log(cars_criteria)
-			update_car_criteria()
+			selected_cars = JSON.parse(state.selected_cars)
+			update_selected_cars()
 		}
 
-		get_car_brands()
+		if(state.selected_colors)
+		{
+			selected_colors = JSON.parse(state.selected_colors)
+			update_selected_colors()
+		}
 
 		search()
-		set_images()
+
+		document.body.style = "display: block"
+		document.body.setAttribute('class', 'show')
 	})
 }
 

@@ -4,6 +4,9 @@
 .error
 	animation: error_animation 0.2s
 
+.show
+	animation: show_animation 0.2s
+
 @keyframes error_animation
 	0%
 		outline: 5px solid red
@@ -11,3 +14,10 @@
 
 	100%
 		outline: 1px solid red
+
+@keyframes show_animation
+	0%
+		opacity: 0
+
+	100%
+		opacity: 100%
