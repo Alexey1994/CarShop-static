@@ -11,6 +11,7 @@ function update_page(language)
 
 		localize(language)
 
+		authenticate()
 		update_search_orders()
 		get_car_brands()
 		get_colors()

@@ -7,6 +7,9 @@
 .show
 	animation: show_animation 0.2s
 
+.hide
+	animation: hide_animation 0.2s
+
 @keyframes error_animation
 	0%
 		outline: 5px solid red
@@ -21,3 +24,10 @@
 
 	100%
 		opacity: 100%
+
+@keyframes hide_animation
+	0%
+		opacity: 100%
+
+	100%
+		opacity: 0

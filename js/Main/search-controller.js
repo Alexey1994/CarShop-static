@@ -122,8 +122,8 @@ function get_colors()
 	}
 
 	JSON_select.select.attributes={
-		class: 'type-car'//,
-		//onchange: "add_state('selected_model', this.value)"
+		class: 'type-car',
+		onchange: "add_state('selected_color', this.value)"
 	}
 
 	add_JSON_to_HTML('select_color', JSON_select)
@@ -224,6 +224,8 @@ function set_order(element)
 
 	console.log(element.order? 'asc': 'desc')
 	add_state('order', element.order? 'asc': 'desc')
+	add_state('current_page', 1)
+	search()
 }
 
 
@@ -237,6 +239,8 @@ function update_search_orders()
 			{
 				console.log(this.getAttribute('parameter'))
 				add_state('order_by', this.getAttribute('parameter'))
+				add_state('current_page', 1)
+				search()
 			}
 }
 

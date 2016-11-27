@@ -13,6 +13,7 @@ function set_pages_count(pages_count, start_page)
 				'element': i + start_page,
 				
 				attributes:{
+					class:   (i + start_page == state.current_page) ? 'selected-page' : '',
 					onclick: "add_state('current_page', this.querySelector('element').innerHTML); search()"
 				}
 			}

@@ -6,20 +6,33 @@
 		<link rel="stylesheet" href="css/style.css">
 
 	<body style="display: none">
+		<div class="viewer">
+			<div class="background" onclick="hide_viewer()">
+			<div class="images">
+				<view name="images">
+					<car_images>
+
+				<view name="cart">
+					<cars_in_cart>
+					<button class="order-button">Оформить заказ
 
 		<div class="header">
 			<div class="language-buttons">
 				<button onclick="update_page('RU')">Русский
 				<button onclick="update_page('EN')">English
 
-			<div class="user">
+			<div class="not_authenticated_user">
 				<input type="text" placeholder="#login" class="login">
 				<input type="password" placeholder="#password" class="password">
-				<button class="login">#sign_out
-				<button class="login">#sign_in
+				<button class="login" onclick="register()">#sign_out
+				<button class="login" onclick="login()">#sign_in
 
-			<div class="cart">
-				<div class="cart-wrapper" onclick="open_cart()">
+			<div class="authenticated_user">
+				<user>
+				<button class="logout" onclick="logout()">Выйти
+
+			<div class="cart" onclick="open_cart()">
+				<div class="cart-wrapper" >
 					<model name="cart">
 						<cart_count>
 						#orders
@@ -60,7 +73,7 @@
 					<input type="number" placeholder="#from" class="price" oninput="set_price_begin(this)" id="input_begin_price">
 					<input type="number" placeholder="#to" class="price" oninput="set_price_end(this)" id="input_end_price">
 
-					<button class="search-button" onclick="add_state('current_page', 0); search()">#find
+					<button class="search-button" onclick="add_state('current_page', 1); search()">#find
 
 			<div class="cars">
 				<div class="search-order">
@@ -84,8 +97,10 @@
 		<script src="js/libraries/state saver.js">
 		<script src="js/libraries/from JSON to XML converter.js">
 
+		<script src="js/Main/viewer-controller.js">
 		<script src="js/Main/search-controller.js">
 		<script src="js/Main/pagination-controller.js">
 		<script src="js/Main/cars-controller.js">
 		<script src="js/Main/cart-controller.js">
+		<script src="js/Main/user-controller.js">
 		<script src="js/Main/main.js">

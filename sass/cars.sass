@@ -13,7 +13,8 @@ cars
 		margin:            1%
 		padding:           2%
 		height:            150px
-		box-shadow:        1px 0px 3px -1px #000
+		box-shadow:        1px 0px 5px -1px #000
+		border-radius:     3px
 		background-color:  #fff
 
 		.descriptions
@@ -31,35 +32,46 @@ cars
 		id
 			display: none
 
+		name
+			display: block
+
 		brand
-			float:  right
-			width:  56%
+			display:   inline-block
+			font-size: 20pt
+			color:     #1c344d
 
 		model
-			float:  right
-			width:  56%
+			margin-left: 5px
+			display:     inline-block
+			font-size:   20pt
+			color:       #1c344d
+
+		descriptions
+			display:    block
+			margin-top: 30px
+			font-size:  10pt
 
 		color
-			float:  right
-			width:  56%
+			display: inline-block
 
 		power
-			float:  right
-			width:  56%
+			display: inline-block
 
 		speed
-			float:  right
-			width:  56%
+			display: inline-block
 
 		year_of_manufacture
-			float:  right
-			width:  56%
+			display: inline-block
 
 		price
+			position:     absolute
+			top:          0
+			right:        0
 			margin-top:   10px
-			float:        right
-			width:        56%
+			margin-right: 10px
 			font-weight:  bolder
+			font-size:    15pt
+			color:        #676767
 
 		images
 			top:        0
@@ -67,9 +79,12 @@ cars
 			max-width:  20%
 
 		img
-			top:        0
-			height:     100%
-			max-width:  20%
+			cursor:       pointer
+			margin-right: 2%
+			float:        left
+			top:          0
+			height:       100%
+			min-width:    150px
 
 		.add
 			position: absolute
@@ -90,9 +105,8 @@ cars
 	padding:          1%
 	margin:           1%
 	text-align:       center
-	background-color: #000
+	background-color: #6f6f6f
 	color:            #fff
-	box-shadow:       0 0 2px 0 #000
 
 	span
 		position:         relative
@@ -100,11 +114,16 @@ cars
 		width:            auto
 		display:          inline-block
 		padding:          1%
-		margin:           0
-		background-color: #1D092C
+		margin:           0 1px
 
 	span:hover
 		cursor:           pointer
+		background-color: #444
+
+	.selected-page
+		background-color: #222
+
+	.selected-page:hover
 		background-color: #444
 
 	.count

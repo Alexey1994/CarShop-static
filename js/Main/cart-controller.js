@@ -1,4 +1,5 @@
 function open_cart()
 {
-	window.location = 'cart.html'
+	show_viewer('cart')
+	//window.location = 'cart.html'
 }

@@ -4,7 +4,7 @@ html, body {
   font-family: Arial;
   font-size: 1em;
   font-weight: normal;
-  background-color: #4e4e4e; }
+  background-color: #e4e4e4; }
 
 model {
   display: block; }
@@ -51,17 +51,26 @@ input:hover {
   margin: 10px; }
 
 .header {
-  height: 140px;
-  background-color: #aaa; }
+  height: 140px; }
 
-.user {
+.not_authenticated_user {
   position: absolute;
   padding: 10px;
   width: 150px;
   right: 0; }
-  .user .password {
+  .not_authenticated_user .password {
     margin-bottom: 10px; }
-  .user .login {
+  .not_authenticated_user .login {
+    width: 100%; }
+
+.authenticated_user {
+  position: absolute;
+  padding: 10px;
+  width: 150px;
+  right: 0; }
+  .authenticated_user .user {
+    width: 100%; }
+  .authenticated_user .logout {
     width: 100%; }
 
 .cart {
@@ -75,6 +84,31 @@ input:hover {
 .cart:hover {
   cursor: pointer;
   background-color: #eee; }
+
+.viewer {
+  display: none;
+  z-index: 1; }
+  .viewer .background {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    background: #000; }
+  .viewer .images {
+    overflow: auto;
+    cursor: default;
+    z-index: 2;
+    position: fixed;
+    margin: 1% 10%;
+    padding: 2%;
+    height: 90%;
+    width: 80%;
+    background-color: #fff; }
+
+.viewer:hover {
+  cursor: pointer; }
 
 .content {
   margin-top: 1%; }
@@ -170,7 +204,8 @@ cars car {
   margin: 1%;
   padding: 2%;
   height: 150px;
-  box-shadow: 1px 0px 3px -1px #000;
+  box-shadow: 1px 0px 5px -1px #000;
+  border-radius: 3px;
   background-color: #fff; }
   cars car .descriptions {
     position: absolute;
@@ -184,37 +219,49 @@ cars car {
     color: #12563A; }
   cars car id {
     display: none; }
+  cars car name {
+    display: block; }
   cars car brand {
-    float: right;
-    width: 56%; }
+    display: inline-block;
+    font-size: 20pt;
+    color: #1c344d; }
   cars car model {
-    float: right;
-    width: 56%; }
+    margin-left: 5px;
+    display: inline-block;
+    font-size: 20pt;
+    color: #1c344d; }
+  cars car descriptions {
+    display: block;
+    margin-top: 30px;
+    font-size: 10pt; }
   cars car color {
-    float: right;
-    width: 56%; }
+    display: inline-block; }
   cars car power {
-    float: right;
-    width: 56%; }
+    display: inline-block; }
   cars car speed {
-    float: right;
-    width: 56%; }
+    display: inline-block; }
   cars car year_of_manufacture {
-    float: right;
-    width: 56%; }
+    display: inline-block; }
   cars car price {
+    position: absolute;
+    top: 0;
+    right: 0;
     margin-top: 10px;
-    float: right;
-    width: 56%;
-    font-weight: bolder; }
+    margin-right: 10px;
+    font-weight: bolder;
+    font-size: 15pt;
+    color: #676767; }
   cars car images {
     top: 0;
     height: 100%;
     max-width: 20%; }
   cars car img {
+    cursor: pointer;
+    margin-right: 2%;
+    float: left;
     top: 0;
     height: 100%;
-    max-width: 20%; }
+    min-width: 150px; }
   cars car .add {
     position: absolute;
     right: 1%;
@@ -232,19 +279,21 @@ cars car {
   padding: 1%;
   margin: 1%;
   text-align: center;
-  background-color: #000;
-  color: #fff;
-  box-shadow: 0 0 2px 0 #000; }
+  background-color: #6f6f6f;
+  color: #fff; }
   .pages span {
     position: relative;
     height: auto;
     width: auto;
     display: inline-block;
     padding: 1%;
-    margin: 0;
-    background-color: #1D092C; }
+    margin: 0 1px; }
   .pages span:hover {
     cursor: pointer;
+    background-color: #444; }
+  .pages .selected-page {
+    background-color: #222; }
+  .pages .selected-page:hover {
     background-color: #444; }
   .pages .count {
     margin-top: 2%;
@@ -265,7 +314,7 @@ id_order {
   display: none; }
 
 .order-button {
-  position: absolute;
+  float: right;
   margin: 15px; }
 
 .no-anim {
@@ -276,6 +325,9 @@ id_order {
 
 .show {
   animation: show_animation 0.2s; }
+
+.hide {
+  animation: hide_animation 0.2s; }
 
 @keyframes error_animation {
   0% {
@@ -288,6 +340,11 @@ id_order {
     opacity: 0; }
   100% {
     opacity: 100%; } }
+@keyframes hide_animation {
+  0% {
+    opacity: 100%; }
+  100% {
+    opacity: 0; } }
 .new-car-wrapper {
   width: 80%;
   float: right;
