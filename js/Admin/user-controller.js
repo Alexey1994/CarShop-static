@@ -13,7 +13,7 @@ function register()
 		password: user_form.get_password().value
 	}
 
-	send('register', encodeURI(JSON.stringify(user_data)), function(status)
+	send('add_administrator', encodeURI(JSON.stringify(user_data)), function(status)
 	{
 		alert(status)
 		status = JSON.parse(status)
@@ -47,23 +47,27 @@ function authenticate()
 		data = JSON.parse(data)
 
 		if(data.status)
-		{
+		{/*
 			user_form.get_not_authenticated_user_element().style.display = 'block'
-			user_form.get_authenticated_user_element().style.display = 'none'
+			user_form.get_authenticated_user_element().style.display = 'none'*/
 			return
 		}
-
+/*
 		if(data.role == 'admin')
 			window.location = 'a.html'
-
+*/
+/*
 		user_form.get_not_authenticated_user_element().style.display = 'none'
 		user_form.get_authenticated_user_element().style.display = 'block'
-
+*/
+/*
 		var JSON_user = {
 			username: data.name
 		}
+*/
+		show_viewer('menu')
 
-		add_JSON_to_HTML('.authenticated_user user', JSON_user)
+		//add_JSON_to_HTML('.authenticated_user user', JSON_user)
 	})
 }
 
@@ -76,6 +80,9 @@ function logout()
 
 		authenticate()
 
-		alert(data.status)
+		if(data.status == 'Ok')
+			show_viewer('user')
+		else
+			alert(data.status)
 	})
 }

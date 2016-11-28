@@ -1,120 +1,7 @@
-var cars=[
-	{
-		car_model: 'Audi',
-		car_type:  'RS',
-		speed:     320,
-		car_image: 'images/audi-rs.jpg',
-		price:     100000
-	},
-
-	{
-		car_model: 'Lamborghini',
-		car_type:  'Murcielago',
-		speed:     342,
-		car_image: 'images/lamboghini murcielago.jpg',
-		price:     300000
-	},
-
-	{
-		car_model: 'Lamborghini',
-		car_type:  'Murcielago',
-		speed:     342,
-		car_image: 'images/lamboghini murcielago.jpg',
-		price:     300000
-	},
-
-	{
-		car_model: 'Lamborghini',
-		car_type:  'Murcielago',
-		speed:     342,
-		car_image: 'images/lamboghini murcielago.jpg',
-		price:     300000
-	},
-
-	{
-		car_model: 'Lamborghini',
-		car_type:  'Murcielago',
-		speed:     342,
-		car_image: 'images/lamboghini murcielago.jpg',
-		price:     300000
-	},
-
-	{
-		car_model: 'Lamborghini',
-		car_type:  'Murcielago',
-		speed:     342,
-		car_image: 'images/lamboghini murcielago.jpg',
-		price:     300000
-	},
-
-	{
-		car_model: 'Lamborghini',
-		car_type:  'Murcielago',
-		speed:     342,
-		car_image: 'images/lamboghini murcielago.jpg',
-		price:     300000
-	},
-
-	{
-		car_model: 'Lamborghini',
-		car_type:  'Murcielago',
-		speed:     342,
-		car_image: 'images/lamboghini murcielago.jpg',
-		price:     300000
-	},
-
-	{
-		car_model: 'Lamborghini',
-		car_type:  'Murcielago',
-		speed:     342,
-		car_image: 'images/lamboghini murcielago.jpg',
-		price:     300000
-	},
-
-	{
-		car_model: 'Lamborghini',
-		car_type:  'Murcielago',
-		speed:     342,
-		car_image: 'images/lamboghini murcielago.jpg',
-		price:     300000
-	},
-
-	{
-		car_model: 'Lamborghini',
-		car_type:  'Murcielago',
-		speed:     342,
-		car_image: 'images/lamboghini murcielago.jpg',
-		price:     300000
-	},
-
-	{
-		car_model: 'Lamborghini',
-		car_type:  'Murcielago',
-		speed:     342,
-		car_image: 'images/lamboghini murcielago.jpg',
-		price:     300000
-	},
-
-	{
-		car_model: 'Lamborghini',
-		car_type:  'Murcielago',
-		speed:     342,
-		car_image: 'images/lamboghini murcielago.jpg',
-		price:     300000
-	},
-
-	{
-		car_model: 'Lamborghini',
-		car_type:  'Murcielago',
-		speed:     342,
-		car_image: 'images/lamboghini murcielago.jpg',
-		price:     300000
-	}
-]
-
-
 function update_page(language)
 {
+	document.body.style = "display: none"
+	
 	refresh_state()
 	add_state('language', language)
 
@@ -122,32 +9,34 @@ function update_page(language)
 	{
 		language = JSON.parse(language)
 
-		localize(language)
+		//localize(language)
 
-		update_arrays(document)
+		//authenticate()
+		update_search_orders()
+		get_car_brands()
+		get_colors()
 
-		set_model('cars', cars)
-		set_images()
-
-		get_input('car_parameters')
-
-		set_pages_count(30)
-		set_search_types_events()
+		//set_model('cart', {cart_count: 0})
 
 		if(state.selected_cars)
 		{
-			cars_criteria = JSON.parse(decodeURI(state.selected_cars))
-			update_car_criteria()
+			selected_cars = JSON.parse(state.selected_cars)
+			update_selected_cars()
 		}
 
-		get_input('new_car')
+		if(state.selected_colors)
+		{
+			selected_colors = JSON.parse(state.selected_colors)
+			update_selected_colors()
+		}
+
+		search()
+
+		document.body.style = "display: block"
+		document.body.setAttribute('class', 'show')
 	})
 }
 
 
-refresh_state()
-
-if(state.language)
-	update_page(state.language)
-else
-	update_page('RU')
+show_viewer('user')
+authenticate()

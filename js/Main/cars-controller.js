@@ -11,7 +11,7 @@ function view_images(images)
 		JSON_images.push({
 			img: {
 				attributes:{
-					src: images[i]
+					src: 'images/' + images[i]
 				}
 			}
 		})
@@ -41,7 +41,7 @@ function render_cars(JSON_cars)
 		var new_car = {
 			image:{
 				attributes:{
-					src:     car.images[0],
+					src:     'images/' + car.images[0],
 					images:  JSON.stringify(car.images),
 					onclick: "view_images(this.getAttribute('images'))"
 				}

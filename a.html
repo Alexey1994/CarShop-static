@@ -1,0 +1,142 @@
+<!DOCTYPE html="">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+			#title		</title>
+		<link href="css/style.css" rel="stylesheet">
+			</head>
+	<body>
+		<div class="admin_viewer">
+			<view name="user">
+				<registrator>
+					Admin					<input class="login" placeholder="#login" type="text">
+					<input class="password" placeholder="#password" type="password">
+					<button class="login" onclick="register()">
+						#sign_out					</button>
+					<button class="login" onclick="login()">
+						#sign_in											</button>
+				</registrator>
+			</view>
+			<view name="menu">
+				<registrator>
+					<button class="logout" onclick="logout()">
+						Выйти											</button>
+				</registrator>
+				<menu_elements>
+					<button onclick="show_cars_editor()">
+						Редактирование автомобилей					</button>
+					<button onclick="show_orders()">
+						Просмотр заказов											</button>
+				</menu_elements>
+			</view>
+			<view name="new_car">
+				<input id="new_car_brand" placeholder="Марка" type="text">
+				<input id="new_car_model" placeholder="Модель" type="text">
+				<input id="new_car_color" placeholder="Цвет" type="text">
+				<input id="new_car_speed" placeholder="Скорость" type="text">
+				<input id="new_car_power" placeholder="Мощность" type="text">
+				<input id="new_car_year_of_manufacture" placeholder="Год выпуска" type="text">
+				<input id="new_car_price" placeholder="Цена" type="text">
+				<button onclick="add_new_car()">
+					Добавить				</button>
+				<button onclick="show_cars_editor()">
+					Отмена									</button>
+			</view>
+			<view name="cars_editor">
+				<div class="search-menu">
+					<div class="search-panel">
+						<selected_cars>
+													</selected_cars>
+						<div class="divider">
+							#model_car:						</div>
+						<select_brand>
+													</select_brand>
+						<div class="divider">
+							#type_car:						</div>
+						<select_model>
+						</select_model>
+						<button class="add-car-criteria" onclick="add_car_criteria()">
+							Добавить ещё													</button>
+						<hr>
+						<selected_colors>
+													</selected_colors>
+						Цвет:						<select_color>
+						</select_color>
+						<button class="add-car-criteria" onclick="add_color()">
+							Добавить ещё													</button>
+						<hr>
+						<div class="divider">
+							Мощность:						</div>
+						<input class="price" id="input_begin_power" oninput="set_power_begin(this)" placeholder="#from" type="number">
+						<input class="price" id="input_end_power" oninput="set_power_end(this)" placeholder="#to" type="number">
+												<div class="divider">
+							Скорость:						</div>
+						<input class="price" id="input_begin_speed" oninput="set_speed_begin(this)" placeholder="#from" type="number">
+						<input class="price" id="input_end_speed" oninput="set_speed_end(this)" placeholder="#to" type="number">
+												<div class="divider">
+							Год выпуска:						</div>
+						<input class="price" id="input_begin_year_of_manufacture" oninput="set_year_of_manufacture_begin(this)" placeholder="#from" type="number">
+						<input class="price" id="input_end_year_of_manufacture" oninput="set_year_of_manufacture_end(this)" placeholder="#to" type="number">
+												<div class="divider">
+							Цена:						</div>
+						<input class="price" id="input_begin_price" oninput="set_price_begin(this)" placeholder="#from" type="number">
+						<input class="price" id="input_end_price" oninput="set_price_end(this)" placeholder="#to" type="number">
+												<button class="search-button" onclick="add_state('current_page', 1); search()">
+							#find						</button>
+						<button class="search-button" onclick="show_new_car()">
+							Новый автомобиль													</button>
+					</div>
+				</div>
+				<div class="cars">
+					<div class="search-order">
+						<span>
+							сортировать по:						</span>
+						<button class="type" parameter="power">
+							Мощность						</button>
+						<button class="type" parameter="speed">
+							Скорость						</button>
+						<button class="type" parameter="year_of_manufacture">
+							Год выпуска						</button>
+						<button class="type" parameter="price">
+							Цена						</button>
+						<span>
+							порядок:						</span>
+						<button class="order" onclick="set_order(this)">
+							&darr;													</button>
+					</div>
+					<cars>
+											</cars>
+					<div class="pages">
+						<pages>
+													</pages>
+					</div>
+				</div>
+			</view>
+		</div>
+		<script src="js/libraries/API.js">
+		</script>
+		<script src="js/libraries/localizator.js">
+		</script>
+		<script src="js/libraries/state saver.js">
+		</script>
+		<script src="js/libraries/from JSON to XML converter.js">
+					</script>
+		<script src="js/Admin/viewer-controller.js">
+		</script>
+		<script src="js/Admin/user-controller.js">
+		</script>
+		<script src="js/Admin/menu-controller.js">
+					</script>
+		<script src="js/Main/search-controller.js">
+		</script>
+		<script src="js/Main/pagination-controller.js">
+		</script>
+		<script src="js/Admin/cars-controller.js">
+					</script>
+		<script src="js/Admin/add-controller.js">
+		</script>
+		<script src="js/Admin/main.js">
+		</script>
+	</body>
+</html>

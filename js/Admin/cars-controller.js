@@ -1,50 +1,104 @@
-function set_images()
+function view_images(images)
 {
-	var elements = document.querySelectorAll('model element')
+	var JSON_images = []
 
-	for(var i in elements)
+	images = JSON.parse(images)
+
+	console.log(images)
+
+	for(var i in images)
 	{
-		if(typeof elements[i] != 'object')
-			continue
-
-		var image = document.createElement('img')
-		var car_image = elements[i].querySelector('car_image')
-/*
-		image.src = car_image.innerHTML
-		image.alt = car_image.innerHTML
-		elements[i].appendChild(image)
-		elements[i].removeChild(car_image)*/
+		JSON_images.push({
+			img: {
+				attributes:{
+					src: 'images/' + images[i]
+				}
+			}
+		})
 	}
+
+	add_JSON_to_HTML('.viewer car_images', JSON_images)
+	show_viewer('images')
 }
 
 
-function set_new_car()
+function render_cars(JSON_cars)
 {
-	document.querySelector('.search-menu').style.display = 'none'
-	document.querySelector('.cars').style.display = 'none'
-	document.querySelector('.new-car-wrapper').style.display = 'block'
-}
+	var cars = []
 
-
-function cancel_save_new_car()
-{
-	document.querySelector('.search-menu').style.display = 'block'
-	document.querySelector('.cars').style.display = 'block'
-	document.querySelector('.new-car-wrapper').style.display = 'none'
-}
-
-
-function save_new_car()
-{
-	var new_car = get_input('new_car')
-//JSON.stringify(get_input)
-console.log(new_car)
-	send('add_car', JSON.stringify(new_car), function(status)
+	for(var i in JSON_cars)
 	{
-		alert(status)
-/*
-		document.querySelector('.search-menu').style.display = 'block'
-		document.querySelector('.cars').style.display = 'block'
-		document.querySelector('.new-car-wrapper').style.display = 'none'*/
-	})
+		JSON_cars[i].button={
+			attributes:{
+				class: 'add',
+				onclick: "console.log(this)"
+			},
+			span: 'Редактировать'
+		}
+
+		var car = JSON_cars[i]
+
+		var new_car = {
+			image:{
+				attributes:{
+					src:     'images/' + car.images[0],
+					images:  JSON.stringify(car.images),
+					onclick: "view_images(this.getAttribute('images'))"
+				}
+			},
+
+			name:{
+				brand: car.brand,
+				model: car.model
+			},
+
+			descriptions:{},
+
+			price: car.price + ' BYN',
+			
+			buttons:{
+				edit_button:{
+					button:{
+							
+						attributes:{
+							onclick: "console.log(this)"
+						},
+
+						span: 'Редактировать'
+					}
+				},
+
+				del_button:{
+					button:{
+							
+						attributes:{
+							onclick: "console.log(this)"
+						},
+
+						span: 'Удалить'
+					}
+				}
+			},
+
+			id: car.id
+		}
+
+		if(car.power)
+			new_car.descriptions.power = car.power + ' л.с., '
+
+		if(car.speed)
+			new_car.descriptions.speed = car.speed + ' км/ч, '
+
+		if(car.year_of_manufacture)
+			new_car.descriptions.year_of_manufacture = car.year_of_manufacture + ' г., '
+
+		if(car.color)
+			new_car.descriptions.color = car.color
+
+		cars.push({
+			car: new_car
+		})
+	}
+
+	add_JSON_to_HTML('cars', cars)
 }

@@ -2,12 +2,15 @@ function set_pages_count(pages_count, start_page)
 {
 	var pages = []
 
-	if(start_page > 4)
+	//alert(start_page)
+	//alert(pages_count)
+
+	if(start_page > 4 && start_page <= pages_count)
 		start_page -= 4
 	else
 		start_page = 1
 
-	for(var i=0; i<=pages_count && i<9; i++)
+	for(var i=0; i <= pages_count - start_page && i<9; i++)
 		pages.push({
 			span:{
 				'element': i + start_page,
