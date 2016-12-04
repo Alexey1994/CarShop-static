@@ -1,3 +1,9 @@
+function show_menu()
+{
+	show_viewer('menu')
+}
+
+
 function show_cars_editor()
 {
 	show_viewer('cars_editor')
@@ -7,7 +13,8 @@ function show_cars_editor()
 
 function show_orders()
 {
-
+	show_viewer('orders')
+	get_orders()
 }
 
 

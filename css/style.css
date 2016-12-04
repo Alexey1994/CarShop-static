@@ -196,9 +196,11 @@ input:hover {
   width: 80%;
   float: right; }
 
-cars element {
+cars order_id, cars_in_cart order_id {
+  display: none; }
+cars element, cars_in_cart element {
   display: block; }
-cars car {
+cars car, cars_in_cart car {
   position: relative;
   display: block;
   margin: 1%;
@@ -207,42 +209,42 @@ cars car {
   box-shadow: 1px 0px 5px -1px #000;
   border-radius: 3px;
   background-color: #fff; }
-  cars car .descriptions {
+  cars car .descriptions, cars_in_cart car .descriptions {
     position: absolute;
     left: 23%;
     display: inline-block;
     width: 20%;
     height: 100%; }
-  cars car .price-desription {
+  cars car .price-desription, cars_in_cart car .price-desription {
     margin-top: 10px;
     font-weight: bolder;
     color: #12563A; }
-  cars car id {
+  cars car id, cars_in_cart car id {
     display: none; }
-  cars car name {
+  cars car name, cars_in_cart car name {
     display: block; }
-  cars car brand {
+  cars car brand, cars_in_cart car brand {
     display: inline-block;
     font-size: 20pt;
     color: #1c344d; }
-  cars car model {
+  cars car model, cars_in_cart car model {
     margin-left: 5px;
     display: inline-block;
     font-size: 20pt;
     color: #1c344d; }
-  cars car descriptions {
+  cars car descriptions, cars_in_cart car descriptions {
     display: block;
     margin-top: 30px;
     font-size: 10pt; }
-  cars car color {
+  cars car color, cars_in_cart car color {
     display: inline-block; }
-  cars car power {
+  cars car power, cars_in_cart car power {
     display: inline-block; }
-  cars car speed {
+  cars car speed, cars_in_cart car speed {
     display: inline-block; }
-  cars car year_of_manufacture {
+  cars car year_of_manufacture, cars_in_cart car year_of_manufacture {
     display: inline-block; }
-  cars car price {
+  cars car price, cars_in_cart car price {
     position: absolute;
     top: 0;
     right: 0;
@@ -251,30 +253,30 @@ cars car {
     font-weight: bolder;
     font-size: 15pt;
     color: #676767; }
-  cars car images {
+  cars car images, cars_in_cart car images {
     top: 0;
     height: 100%;
     max-width: 20%; }
-  cars car img {
+  cars car img, cars_in_cart car img {
     cursor: pointer;
     margin-right: 2%;
     float: left;
     top: 0;
     height: 100%;
     min-width: 150px; }
-  cars car .add {
+  cars car .add, cars_in_cart car .add {
     position: absolute;
     right: 1%;
     bottom: 5%; }
-  cars car .del {
+  cars car .del, cars_in_cart car .del {
     position: absolute;
     right: 1%;
     top: 5%; }
-  cars car .edit {
+  cars car .edit, cars_in_cart car .edit {
     position: absolute;
     right: 1%;
     bottom: 5%; }
-  cars car buttons {
+  cars car buttons, cars_in_cart car buttons {
     position: absolute;
     right: 1%;
     bottom: 5%; }
@@ -379,6 +381,13 @@ menu_elements {
   width: 20%;
   margin: 10%; }
   menu_elements button {
+    width: 100%; }
+
+orders {
+  display: block; }
+  orders order {
+    margin: 10px 0;
+    display: block;
     width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

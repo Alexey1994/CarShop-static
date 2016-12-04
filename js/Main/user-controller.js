@@ -30,10 +30,15 @@ function login()
 		password: user_form.get_password().value
 	}
 
+	document.cookie = 'login=;session=;'
+
 	send('login', encodeURI(JSON.stringify(user_data)), function(status)
 	{
-		alert(status)
+		//alert(status)
 		status = JSON.parse(status)
+
+		if(status.status != 'Ok')
+			alert(status.status)
 
 		authenticate()
 	})
@@ -44,7 +49,11 @@ function authenticate()
 {
 	get('get_user', function(data)
 	{
-		data = JSON.parse(data)
+		try{
+			data = JSON.parse(data)
+		}catch(e){
+			data = {status: 1}
+		}
 
 		if(data.status)
 		{
@@ -64,6 +73,7 @@ function authenticate()
 		}
 
 		add_JSON_to_HTML('.authenticated_user user', JSON_user)
+		render_cart()
 	})
 }
 
@@ -73,9 +83,6 @@ function logout()
 	get('logout', function(data)
 	{
 		data = JSON.parse(data)
-
 		authenticate()
-
-		alert(data.status)
 	})
 }

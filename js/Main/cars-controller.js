@@ -27,14 +27,14 @@ function render_cars(JSON_cars)
 	var cars = []
 
 	for(var i in JSON_cars)
-	{
+	{/*
 		JSON_cars[i].button={
 			attributes:{
 				class: 'add',
-				onclick: "console.log(this)"
+				onclick: "console.log(this.parentNode)"
 			},
 			span: 'Добавить в корзину'
-		}
+		}*/
 
 		var car = JSON_cars[i]
 
@@ -60,7 +60,7 @@ function render_cars(JSON_cars)
 					
 				attributes:{
 					class: 'add',
-					onclick: "console.log(this)"
+					onclick: "add_to_cart(this.parentNode.querySelector('id').innerHTML)"
 				},
 
 				span: 'Добавить в корзину'

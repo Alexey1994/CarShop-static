@@ -14,7 +14,8 @@
 
 				<view name="cart">
 					<cars_in_cart>
-					<button class="order-button">Оформить заказ
+					<cart_price>
+					<button class="order-button" onclick="confirm_purchase()">Оформить заказ
 
 		<div class="header">
 			<div class="language-buttons">
@@ -35,7 +36,6 @@
 				<div class="cart-wrapper" >
 					<model name="cart">
 						<cart_count>
-						#orders
 
 		<div class="content">
 			<div class="search-menu">
@@ -101,6 +101,7 @@
 		<script src="js/Main/search-controller.js">
 		<script src="js/Main/pagination-controller.js">
 		<script src="js/Main/cars-controller.js">
+		<script src="js/Main/orders-controller.js">
 		<script src="js/Main/cart-controller.js">
 		<script src="js/Main/user-controller.js">
 		<script src="js/Main/main.js">

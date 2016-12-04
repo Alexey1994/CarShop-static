@@ -31,6 +31,7 @@ function update_page(language)
 		}
 
 		search()
+		render_cart()
 
 		document.body.style = "display: block"
 		document.body.setAttribute('class', 'show')

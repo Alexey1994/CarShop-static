@@ -18,7 +18,9 @@
 				<view name="cart">
 					<cars_in_cart>
 					</cars_in_cart>
-					<button class="order-button">
+					<cart_price>
+					</cart_price>
+					<button class="order-button" onclick="confirm_purchase()">
 						Оформить заказ											</button>
 				</view>
 			</div>
@@ -48,8 +50,8 @@
 				<div class="cart-wrapper">
 					<model name="cart">
 						<cart_count>
-						</cart_count>
-						#orders											</model>
+													</cart_count>
+					</model>
 				</div>
 			</div>
 		</div>
@@ -138,6 +140,8 @@
 		<script src="js/Main/pagination-controller.js">
 		</script>
 		<script src="js/Main/cars-controller.js">
+		</script>
+		<script src="js/Main/orders-controller.js">
 		</script>
 		<script src="js/Main/cart-controller.js">
 		</script>

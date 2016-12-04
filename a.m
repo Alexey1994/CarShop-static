@@ -34,6 +34,10 @@
 				<button onclick="add_new_car()">Добавить
 				<button onclick="show_cars_editor()">Отмена
 
+			<view name="orders">
+				<orders>
+				<button onclick="show_menu()">Назад
+
 			<view name="cars_editor">
 				<div class="search-menu">
 					<div class="search-panel">
@@ -72,6 +76,7 @@
 
 						<button class="search-button" onclick="add_state('current_page', 1); search()">#find
 						<button class="search-button" onclick="show_new_car()">Новый автомобиль
+						<button class="search-button" onclick="show_menu()">Назад
 
 				<div class="cars">
 					<div class="search-order">
@@ -102,4 +107,5 @@
 		<script src="js/Admin/cars-controller.js">
 
 		<script src="js/Admin/add-controller.js">
+		<script src="js/Admin/orders-controller.js">
 		<script src="js/Admin/main.js">
