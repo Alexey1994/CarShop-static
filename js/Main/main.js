@@ -45,3 +45,23 @@ if(state.language)
 	update_page(state.language)
 else
 	update_page('RU')
+
+
+get('http://www.nbrb.by/API/ExRates/Rates?Periodicity=0', function(data)
+{
+	data = JSON.parse(data)
+
+	var rates = []
+
+	for(var i in data)
+	{
+		var rate={
+			name: data[i].Cur_Name,
+			rate: data[i].Cur_OfficialRate + ' BYN'
+		}
+
+		rates.push({block: rate})
+	}
+
+	add_JSON_to_HTML('currency_exchange_rate', rates)
+})

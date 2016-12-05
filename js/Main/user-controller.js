@@ -63,7 +63,7 @@ function authenticate()
 		}
 
 		if(data.role == 'admin')
-			window.location = 'a.html'
+			window.location = 'admin.html'
 
 		user_form.get_not_authenticated_user_element().style.display = 'none'
 		user_form.get_authenticated_user_element().style.display = 'block'

@@ -1,1 +1,1 @@
-translate_minHTML_to_HTML index.m a.m
+translate_minHTML_to_HTML index.m admin.m

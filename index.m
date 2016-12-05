@@ -13,6 +13,7 @@
 					<car_images>
 
 				<view name="cart">
+					<currency_exchange_rate>
 					<cars_in_cart>
 					<cart_price>
 					<button class="order-button" onclick="confirm_purchase()">Оформить заказ

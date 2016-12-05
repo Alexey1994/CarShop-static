@@ -323,6 +323,24 @@ id_order {
   float: right;
   margin: 15px; }
 
+currency_exchange_rate {
+  margin-bottom: 50px;
+  display: block;
+  width: 100%; }
+  currency_exchange_rate block {
+    margin-bottom: 1px;
+    height: 15px;
+    display: block;
+    width: 100%;
+    border: 1px solid #000;
+    font-size: 12px; }
+    currency_exchange_rate block name {
+      width: 50%;
+      float: left; }
+    currency_exchange_rate block rate {
+      width: 50%;
+      float: right; }
+
 .no-anim {
   animation: none; }
 
