@@ -102,5 +102,24 @@ function load_file(file, run_on_load)
 		run_on_load(event.target.result, file_parameters)
 	}
 
-	reader.readAsBinaryString(file_parameters)
+	reader.readAsText(file_parameters)
+	//reader.readAsBinaryString(file_parameters)
+	//reader.readAsDataURL(file_parameters)
+}
+
+
+function load_file_as_URL(file, run_on_load)
+{
+	var reader    = new FileReader()
+	var file_parameters = file.files[0]
+
+	if(!file_parameters)
+		return false
+
+	reader.onload = function(event)
+	{
+		run_on_load(event.target.result, file_parameters)
+	}
+
+	reader.readAsDataURL(file_parameters)
 }

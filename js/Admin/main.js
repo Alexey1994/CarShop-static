@@ -8,6 +8,7 @@ function update_page(language)
 	get('localization/index_' + language + '.json', function(language)
 	{
 		language = JSON.parse(language)
+		window.language = language
 
 		//localize(language)
 

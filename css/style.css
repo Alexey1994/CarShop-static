@@ -408,4 +408,18 @@ orders {
     display: block;
     width: 100%; }
 
+view[name="new_car"] .add-image-button {
+  margin-top: 10px; }
+view[name="new_car"] images {
+  margin-top: 40px; }
+  view[name="new_car"] images car_image {
+    margin-top: 10px;
+    display: block; }
+    view[name="new_car"] images car_image img {
+      width: 100px; }
+    view[name="new_car"] images car_image input {
+      display: inline-block;
+      width: auto;
+      float: right; }
+
 /*# sourceMappingURL=style.css.map */

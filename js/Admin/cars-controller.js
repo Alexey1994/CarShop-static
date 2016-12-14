@@ -1,49 +1,15 @@
-function view_images(images)
-{
-	var JSON_images = []
-
-	images = JSON.parse(images)
-
-	console.log(images)
-
-	for(var i in images)
-	{
-		JSON_images.push({
-			img: {
-				attributes:{
-					src: 'images/' + images[i]
-				}
-			}
-		})
-	}
-
-	add_JSON_to_HTML('.viewer car_images', JSON_images)
-	show_viewer('images')
-}
-
-
 function render_cars(JSON_cars)
 {
 	var cars = []
 
 	for(var i in JSON_cars)
 	{
-		JSON_cars[i].button={
-			attributes:{
-				class: 'add',
-				onclick: "console.log(this)"
-			},
-			span: 'Редактировать'
-		}
-
 		var car = JSON_cars[i]
 
 		var new_car = {
 			image:{
 				attributes:{
-					src:     'images/' + car.images[0],
-					images:  JSON.stringify(car.images),
-					onclick: "view_images(this.getAttribute('images'))"
+					src: sync_get('images/' + car.images[0])
 				}
 			},
 
@@ -57,6 +23,7 @@ function render_cars(JSON_cars)
 			price: car.price + ' BYN',
 			
 			buttons:{
+				/*
 				edit_button:{
 					button:{
 							
@@ -66,13 +33,13 @@ function render_cars(JSON_cars)
 
 						span: 'Редактировать'
 					}
-				},
+				},*/
 
 				del_button:{
 					button:{
 							
 						attributes:{
-							onclick: "console.log(this)"
+							onclick: "console.log(this); delete_car(this.parentNode.parentNode.parentNode.querySelector('id').innerHTML)"
 						},
 
 						span: 'Удалить'
@@ -101,4 +68,21 @@ function render_cars(JSON_cars)
 	}
 
 	add_JSON_to_HTML('cars', cars)
+}
+
+
+function delete_car(id)
+{
+	send('delete_car', id, function(status)
+	{
+		status = JSON.parse(status)
+
+		if(status.status == 'Ok')
+		{
+			search()
+			return
+		}
+
+		alert(status.status)
+	})
 }

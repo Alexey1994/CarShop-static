@@ -26,7 +26,7 @@ function set_pages_count(pages_count, start_page)
 	{
 		pages.push({
 			div: {
-				text: "всего " + pages_count + " страниц",
+				text: pages_count + language.pages,
 				attributes:{
 					class: 'count'
 				}

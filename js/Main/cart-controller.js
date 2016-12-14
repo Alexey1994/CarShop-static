@@ -4,7 +4,6 @@ var cart = []
 function open_cart()
 {
 	show_viewer('cart')
-	//window.location = 'cart.html'
 }
 
 
@@ -38,8 +37,6 @@ function confirm_purchase()
 		}
 
 		render_cart()
-
-		//console.log(products)
 	})
 }
 
@@ -47,13 +44,13 @@ function confirm_purchase()
 function render_cart_count(count)
 {
 	if(!count)
-		add_JSON_to_HTML('cart_count', 'не выбрано ни одного товара')
+		add_JSON_to_HTML('cart_count', language.order_not_select)
 	else if(count%10 >= 2 && count%10 <= 4 && (count%100 < 10 || count%100 > 19))
-		add_JSON_to_HTML('cart_count', count + ' товара')
+		add_JSON_to_HTML('cart_count', count + language.ru_order_a)
 	else if(count%10 == 1 && count%100 != 11)
-		add_JSON_to_HTML('cart_count', count + ' товар')
+		add_JSON_to_HTML('cart_count', count + language.ru_order)
 	else
-		add_JSON_to_HTML('cart_count', count + ' товаров')
+		add_JSON_to_HTML('cart_count', count + language.ru_order_ov)
 }
 
 
@@ -73,7 +70,7 @@ function render_cart()
 			var new_car = {
 				image:{
 					attributes:{
-						src:     'images/' + car.images[0],
+						src:     sync_get('images/' + car.images[0]),
 						images:  JSON.stringify(car.images),
 						onclick: "view_images(this.getAttribute('images'))"
 					}
@@ -95,21 +92,20 @@ function render_cart()
 						onclick: "delete_from_cart(this.parentNode.querySelector('order_id').innerHTML)"
 					},
 
-					span: 'Убрать'
+					span: language.delete
 				},
 
-				//id: car.id,
 				order_id: cart[i].id
 			}
 
 			if(car.power)
-				new_car.descriptions.power = car.power + ' л.с., '
+				new_car.descriptions.power = car.power + language.power_entity
 
 			if(car.speed)
-				new_car.descriptions.speed = car.speed + ' км/ч, '
+				new_car.descriptions.speed = car.speed + language.speed_entity
 
 			if(car.year_of_manufacture)
-				new_car.descriptions.year_of_manufacture = car.year_of_manufacture + ' г., '
+				new_car.descriptions.year_of_manufacture = car.year_of_manufacture + language.year_entity
 
 			if(car.color)
 				new_car.descriptions.color = car.color
@@ -138,16 +134,17 @@ function add_to_cart(id)
 	{
 		data = JSON.parse(data)
 
-		if(data.status == 'Ok')
+		if(data.status != 'Ok')
 		{
-			get('get_car/' + id, function(car)
-			{
-				car = JSON.parse(car)
-				cart.push(car)
-				render_cart()
-			})
-		}
-		else
 			alert(data.status)
+			return
+		}
+		
+		get('get_car/' + id, function(car)
+		{
+			car = JSON.parse(car)
+			cart.push(car)
+			render_cart()
+		})
 	})
 }

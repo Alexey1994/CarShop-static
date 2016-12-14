@@ -1,3 +1,4 @@
+var language
 var localizator_body_template = document.body.innerHTML
 var localizator_head_template = document.head.innerHTML
 

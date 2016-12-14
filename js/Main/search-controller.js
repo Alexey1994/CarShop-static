@@ -533,12 +533,9 @@ function search()
 	if(state.order)
 		find_parameters.order = state.order
 
-	console.log(find_parameters)
-
 	send('find_cars', JSON.stringify(find_parameters), function(data)
 	{
 		data = JSON.parse(data)
-		console.log(data)
 
 		render_cars(data.result)
 		set_pages_count(data.pages, parseInt(state.current_page))

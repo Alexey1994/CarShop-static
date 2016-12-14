@@ -24,6 +24,4 @@ function get_orders()
 
 		add_JSON_to_HTML('orders', new_orders)
 	})
-
-	console.log(new Date(123).toString())
 }

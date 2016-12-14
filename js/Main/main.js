@@ -8,6 +8,7 @@ function update_page(language)
 	get('localization/index_' + language + '.json', function(language)
 	{
 		language = JSON.parse(language)
+		window.language = language
 
 		localize(language)
 
@@ -15,8 +16,6 @@ function update_page(language)
 		update_search_orders()
 		get_car_brands()
 		get_colors()
-
-		//set_model('cart', {cart_count: 0})
 
 		if(state.selected_cars)
 		{

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>#title
+		<title>Admin
 		<link rel="stylesheet" href="css/style.css">
 
 	<body>
@@ -12,8 +12,8 @@
 					Admin
 					<input type="text" placeholder="#login" class="login">
 					<input type="password" placeholder="#password" class="password">
-					<button class="login" onclick="register()">#sign_out
-					<button class="login" onclick="login()">#sign_in
+					<button class="login" onclick="register()">Зарегистрироваться
+					<button class="login" onclick="login()">Войти
 
 			<view name="menu">
 				<registrator>
@@ -27,12 +27,15 @@
 				<input type="text" placeholder="Марка" id="new_car_brand">
 				<input type="text" placeholder="Модель" id="new_car_model">
 				<input type="text" placeholder="Цвет" id="new_car_color">
-				<input type="text" placeholder="Скорость" id="new_car_speed">
-				<input type="text" placeholder="Мощность" id="new_car_power">
-				<input type="text" placeholder="Год выпуска" id="new_car_year_of_manufacture">
-				<input type="text" placeholder="Цена" id="new_car_price">
+				<input type="number" placeholder="Скорость" id="new_car_speed">
+				<input type="number" placeholder="Мощность" id="new_car_power">
+				<input type="number" placeholder="Год выпуска" id="new_car_year_of_manufacture">
+				<input type="number" placeholder="Цена" id="new_car_price">
 				<button onclick="add_new_car()">Добавить
 				<button onclick="show_cars_editor()">Отмена
+
+				<images>
+				<button class="add-image-button" onclick="add_image()">Добавить картинку
 
 			<view name="orders">
 				<orders>
@@ -43,10 +46,10 @@
 					<div class="search-panel">
 						<selected_cars>
 
-						<div class="divider">#model_car:
+						<div class="divider">Марка:
 						<select_brand>
 
-						<div class="divider">#type_car:
+						<div class="divider">Модель:
 						<select_model>
 						<button onclick="add_car_criteria()" class="add-car-criteria">Добавить ещё
 
@@ -59,22 +62,22 @@
 
 						<hr>
 						<div class="divider">Мощность:
-						<input type="number" placeholder="#from" class="price" oninput="set_power_begin(this)" id="input_begin_power">
-						<input type="number" placeholder="#to" class="price" oninput="set_power_end(this)" id="input_end_power">
+						<input type="number" placeholder="от" class="price" oninput="set_power_begin(this)" id="input_begin_power">
+						<input type="number" placeholder="до" class="price" oninput="set_power_end(this)" id="input_end_power">
 
 						<div class="divider">Скорость:
-						<input type="number" placeholder="#from" class="price" oninput="set_speed_begin(this)" id="input_begin_speed">
-						<input type="number" placeholder="#to" class="price" oninput="set_speed_end(this)" id="input_end_speed">
+						<input type="number" placeholder="от" class="price" oninput="set_speed_begin(this)" id="input_begin_speed">
+						<input type="number" placeholder="до" class="price" oninput="set_speed_end(this)" id="input_end_speed">
 
 						<div class="divider">Год выпуска:
-						<input type="number" placeholder="#from" class="price" oninput="set_year_of_manufacture_begin(this)" id="input_begin_year_of_manufacture">
-						<input type="number" placeholder="#to" class="price" oninput="set_year_of_manufacture_end(this)" id="input_end_year_of_manufacture">
+						<input type="number" placeholder="от" class="price" oninput="set_year_of_manufacture_begin(this)" id="input_begin_year_of_manufacture">
+						<input type="number" placeholder="до" class="price" oninput="set_year_of_manufacture_end(this)" id="input_end_year_of_manufacture">
 
 						<div class="divider">Цена:
-						<input type="number" placeholder="#from" class="price" oninput="set_price_begin(this)" id="input_begin_price">
-						<input type="number" placeholder="#to" class="price" oninput="set_price_end(this)" id="input_end_price">
+						<input type="number" placeholder="от" class="price" oninput="set_price_begin(this)" id="input_begin_price">
+						<input type="number" placeholder="до" class="price" oninput="set_price_end(this)" id="input_end_price">
 
-						<button class="search-button" onclick="add_state('current_page', 1); search()">#find
+						<button class="search-button" onclick="add_state('current_page', 1); search()">Поиск
 						<button class="search-button" onclick="show_new_car()">Новый автомобиль
 						<button class="search-button" onclick="show_menu()">Назад
 

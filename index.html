@@ -16,6 +16,10 @@
 											</car_images>
 				</view>
 				<view name="cart">
+					<div>
+						<a href="orders_history.csv">
+							#get_orders_history						</a>
+					</div>
 					<currency_exchange_rate>
 					</currency_exchange_rate>
 					<cars_in_cart>
@@ -23,7 +27,7 @@
 					<cart_price>
 					</cart_price>
 					<button class="order-button" onclick="confirm_purchase()">
-						Оформить заказ											</button>
+						#confirm_purchase											</button>
 				</view>
 			</div>
 		</div>
@@ -46,7 +50,7 @@
 				<user>
 				</user>
 				<button class="logout" onclick="logout()">
-					Выйти									</button>
+					#logout									</button>
 			</div>
 			<div class="cart" onclick="open_cart()">
 				<div class="cart-wrapper">
@@ -71,29 +75,29 @@
 					<select_model>
 					</select_model>
 					<button class="add-car-criteria" onclick="add_car_criteria()">
-						Добавить ещё											</button>
+						#add_more											</button>
 					<hr>
 					<selected_colors>
 											</selected_colors>
-					Цвет:					<select_color>
+					#color:					<select_color>
 					</select_color>
 					<button class="add-car-criteria" onclick="add_color()">
-						Добавить ещё											</button>
+						#add_more											</button>
 					<hr>
 					<div class="divider">
-						Мощность:					</div>
+						#power:					</div>
 					<input class="price" id="input_begin_power" oninput="set_power_begin(this)" placeholder="#from" type="number">
 					<input class="price" id="input_end_power" oninput="set_power_end(this)" placeholder="#to" type="number">
 										<div class="divider">
-						Скорость:					</div>
+						#maximum_speed:					</div>
 					<input class="price" id="input_begin_speed" oninput="set_speed_begin(this)" placeholder="#from" type="number">
 					<input class="price" id="input_end_speed" oninput="set_speed_end(this)" placeholder="#to" type="number">
 										<div class="divider">
-						Год выпуска:					</div>
+						#year_of_manufacture:					</div>
 					<input class="price" id="input_begin_year_of_manufacture" oninput="set_year_of_manufacture_begin(this)" placeholder="#from" type="number">
 					<input class="price" id="input_end_year_of_manufacture" oninput="set_year_of_manufacture_end(this)" placeholder="#to" type="number">
 										<div class="divider">
-						Цена:					</div>
+						#price:					</div>
 					<input class="price" id="input_begin_price" oninput="set_price_begin(this)" placeholder="#from" type="number">
 					<input class="price" id="input_end_price" oninput="set_price_end(this)" placeholder="#to" type="number">
 										<button class="search-button" onclick="add_state('current_page', 1); search()">
@@ -103,17 +107,17 @@
 			<div class="cars">
 				<div class="search-order">
 					<span>
-						сортировать по:					</span>
+						#order_by:					</span>
 					<button class="type" parameter="power">
-						Мощность					</button>
+						#power					</button>
 					<button class="type" parameter="speed">
-						Скорость					</button>
+						#maximum_speed					</button>
 					<button class="type" parameter="year_of_manufacture">
-						Год выпуска					</button>
+						#year_of_manufacture					</button>
 					<button class="type" parameter="price">
-						Цена					</button>
+						#price					</button>
 					<span>
-						порядок:					</span>
+						#order:					</span>
 					<button class="order" onclick="set_order(this)">
 						&darr;											</button>
 				</div>
@@ -142,8 +146,6 @@
 		<script src="js/Main/pagination-controller.js">
 		</script>
 		<script src="js/Main/cars-controller.js">
-		</script>
-		<script src="js/Main/orders-controller.js">
 		</script>
 		<script src="js/Main/cart-controller.js">
 		</script>

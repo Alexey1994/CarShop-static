@@ -34,7 +34,6 @@ function login()
 
 	send('login', encodeURI(JSON.stringify(user_data)), function(status)
 	{
-		//alert(status)
 		status = JSON.parse(status)
 
 		if(status.status != 'Ok')
